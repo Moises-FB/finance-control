@@ -1,0 +1,15 @@
+{
+  "login" : "Login",
+  "email" : "E-mail",
+  "password" : "Password",
+  "createAccount" : "Don't have an account yet? Sign up",
+  "forgotPassword" : "Forgot my password",
+  "name" : "Name",
+  "alreadyHaveAccount" : "Already have an account? Sign in",
+  "register" : "Register",
+  "editProfileImage" : "Edit profile image",
+  "signUpText" : "Just provide your information and start using our app!",
+  "drawer_home" : "Home",
+  "drawer_addNew" : "Add new...",
+  "drawer_logout" : "Logout"
+}

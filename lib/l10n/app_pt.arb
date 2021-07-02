@@ -1,0 +1,15 @@
+{
+  "login" : "Entrar",
+  "email" : "E-mail",
+  "password" : "Senha",
+  "createAccount" : "Não possui uma conta? Criar conta",
+  "forgotPassword" : "Esqueci minha senha",
+  "name" : "Nome",
+  "alreadyHaveAccount" : "Já possui uma conta? Entrar",
+  "register" : "Cadastrar",
+  "editProfileImage" : "Editar foto",
+  "signUpText" : "Preencha suas informações e comece a usar nosso app!",
+    "drawer_home" : "Início",
+    "drawer_addNew" : "Adicionar novo...",
+    "drawer_logout" : "Sair"
+}
