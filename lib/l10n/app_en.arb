@@ -11,5 +11,7 @@
   "signUpText" : "Just provide your information and start using our app!",
   "drawer_home" : "Home",
   "drawer_addNew" : "Add new...",
-  "drawer_logout" : "Logout"
+  "drawer_logout" : "Logout",
+  "editProfile" : "Edit profile",
+  "save" : "Save"
 }

@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
         drawer: BaseDrawer(),
         appBar: AppBar(
           title: Text("Finance Control", style: TextStyle(color: Colors.white)),
+            centerTitle: true
         ),
         backgroundColor: Globals.instance!.theme.backgroundColor,
         body: Column(

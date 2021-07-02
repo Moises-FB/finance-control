@@ -1,4 +1,5 @@
 import 'package:finance_control/pages/add_new_page.dart';
+import 'package:finance_control/pages/edit_profile_page.dart';
 import 'package:finance_control/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -97,7 +98,8 @@ class FinanceControl extends StatelessWidget {
           '/login': (context) => LoginPage(),
           '/signUp': (context) => SignUpPage(),
           '/home': (context) => HomePage(),
-          '/addNew': (context) => AddNewPage()
+          '/addNew': (context) => AddNewPage(),
+          '/profile': (context) => EditProfilePage(),
         },
       ),
     );

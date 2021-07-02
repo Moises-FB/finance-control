@@ -20,6 +20,7 @@ class BaseTextInput extends StatelessWidget {
   final Function(String)? onChanged;
   final bool enabled;
   final TextEditingController? controller;
+  final String? initialValue;
 
   BaseTextInput(
       {this.keyboardType,
@@ -36,7 +37,8 @@ class BaseTextInput extends StatelessWidget {
         this.done = false,
         this.onChanged,
         this.enabled = true,
-        this.controller } );
+        this.controller,
+      this.initialValue } );
 
   final phoneMask = new MaskTextInputFormatter(
       mask: '(##) #####-####', filter: {'#': RegExp(r'[0-9]')});
@@ -71,6 +73,7 @@ class BaseTextInput extends StatelessWidget {
         onSaved: onSaved,
         onChanged: onChanged,
         enabled: enabled,
+        initialValue: initialValue,
       ),
     );
   }

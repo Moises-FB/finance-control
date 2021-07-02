@@ -14,5 +14,7 @@
     "drawer_logout" : "Sair",
   "addNewPageTitle" : "Criar nova transação",
     "selectCategoryDropdownHint": "Escolha uma categoria",
-    "transactionValueInputText": "Valor"
+    "transactionValueInputText": "Valor",
+  "editProfile" : "Editar perfil",
+  "save" : "Salvar"
 }
