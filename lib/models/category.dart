@@ -3,5 +3,5 @@ enum Category{
   LEISURE,
   BILLS,
   FOOD,
-  TRANSPORT
+  TRANSPORT,
 }
