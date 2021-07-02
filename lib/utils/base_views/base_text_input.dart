@@ -1,4 +1,6 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../globals.dart';
@@ -13,6 +15,8 @@ class BaseTextInput extends StatelessWidget {
   final bool? obscureText;
   final IconButton? suffixIcon;
   final bool isPhone;
+  final bool isDate;
+  final bool isValue;
   final EdgeInsets? iconsPadding;
   final FormFieldValidator<String>? validator;
   final FormFieldSetter<String>? onSaved;
@@ -31,6 +35,8 @@ class BaseTextInput extends StatelessWidget {
         this.obscureText,
         this.suffixIcon,
         this.isPhone = false,
+        this.isDate = false,
+        this.isValue = false,
         this.iconsPadding,
         this.validator,
         this.onSaved,
@@ -43,6 +49,10 @@ class BaseTextInput extends StatelessWidget {
   final phoneMask = new MaskTextInputFormatter(
       mask: '(##) #####-####', filter: {'#': RegExp(r'[0-9]')});
 
+  final dateMask = new MaskTextInputFormatter(
+    mask: '##/##/####', filter: {'#': RegExp(r'[0-9]')});
+
+  final moneyMask = new CurrencyTextInputFormatter(locale: 'pt-br', decimalDigits: 2, symbol: 'R\$');
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -68,7 +78,7 @@ class BaseTextInput extends StatelessWidget {
 
         ).applyDefaults(Globals.instance!.inputTheme),
         obscureText: obscureText ?? false,
-        inputFormatters: isPhone ? [phoneMask] : null,
+        inputFormatters: isPhone ? [phoneMask] : isDate ? [dateMask] :  isValue ? [moneyMask] : null,
         validator: validator,
         onSaved: onSaved,
         onChanged: onChanged,

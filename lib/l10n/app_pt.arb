@@ -13,8 +13,18 @@
     "drawer_addNew" : "Adicionar novo...",
     "drawer_logout" : "Sair",
   "addNewPageTitle" : "Criar nova transação",
-    "selectCategoryDropdownHint": "Escolha uma categoria",
-    "transactionValueInputText": "Valor",
+    "selectCategoryDropdownHint" : "Escolha uma categoria",
+    "transactionValueInputText" : "Valor",
   "editProfile" : "Editar perfil",
-  "save" : "Salvar"
+  "save" : "Salvar",
+  "billCategory": "Contas",
+  "leisureCategory": "Lazer",
+  "foodCategory": "Alimentação",
+  "transportCategory": "Transporte",
+  "gainCategory": "Entradas",
+  "transactionDateHint": "Data",
+  "dateErrorMessage": "Data inválida",
+  "successMessage":  "Transação salva com sucesso!",
+  "transactionsError": "Erro de servidor",
+  "emptyTransactionList": "Nada cadastrado por enquanto"
 }

@@ -1,35 +1,38 @@
-import 'dart:ffi';
+import 'package:cloud_firestore/cloud_firestore.dart' as f;
+
 import 'category.dart';
 
 class Transaction{
+  String? userId;
   Category category;
-  String date;
-  Double value;
+  DateTime date;
+  double value;
 
-  Transaction({required this.category, required this.date, required this.value});
+  Transaction({required this.category, required this.date, required this.value, this.userId});
 
-  Transaction fromJson(Map<String, dynamic> data){
+  static Transaction fromJson(f.DocumentSnapshot<Object?> snapshot){
     late Category newCategory;
-    switch(data["category"]){
+    switch((snapshot.data()! as Map<String, Object?>)["category"]){
       case "bills": newCategory = Category.BILLS; break;
       case "food": newCategory = Category.FOOD; break;
       case "gain": newCategory = Category.GAIN; break;
+      case "leisure": newCategory = Category.LEISURE; break;
       default: newCategory = Category.TRANSPORT; break;
     }
 
     return Transaction(
       category: newCategory,
-      date: data["date"],
-      value: data["value"]
-
+      date: (snapshot.data()! as Map<String, DateTime>)["date"]!,
+      value: (snapshot.data()! as Map<String, double>)["value"]!,
+      userId: (snapshot.data()! as Map<String, String>)["userId"]!
     );
   }
-  Map<String, dynamic> toJson(Transaction data){
-    Map<String, dynamic> newMap = {};
-    newMap["date"] = data.date;
-    newMap["value"] = data.value;
-    newMap["category"] = data.category;
-
-    return newMap;
+  Map<String, dynamic> toJson(){
+    return {
+      "userId": userId,
+    "date" :  date,
+    "value" : value,
+    "category" :  category.displayTitle,
+    };
   }
 }

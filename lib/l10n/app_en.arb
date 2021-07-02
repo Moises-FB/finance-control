@@ -13,5 +13,19 @@
   "drawer_addNew" : "Add new...",
   "drawer_logout" : "Logout",
   "editProfile" : "Edit profile",
-  "save" : "Save"
+  "save" : "Save",
+  "addNewPageTitle" : "Create new Transaction",
+  "selectCategoryDropdownHint" : "Pick a category",
+  "transactionValueInputText" : "Value",
+  "billCategory": "Bills",
+  "leisureCategory": "Leisure",
+  "foodCategory": "Food",
+  "transportCategory": "Transportation",
+  "gainCategory": "Inflow",
+  "transactionDateHint": "Date",
+  "dateErrorMessage": "Invalid Date",
+  "successMessage":  "Transação salva com sucesso!",
+  "transactionsError": "Internal server Error",
+  "emptyTransactionList": "Nothing registered yet"
+
 }
