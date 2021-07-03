@@ -12,7 +12,7 @@ class Transaction{
 
   static Transaction fromJson(f.DocumentSnapshot<Object?> snapshot){
     late Category newCategory;
-    switch((snapshot.data()! as Map<String, Object?>)["category"]){
+    switch(((snapshot.data()! as Map<String, Object?>)["category"] as String).toLowerCase()){
       case "bills": newCategory = Category.BILLS; break;
       case "food": newCategory = Category.FOOD; break;
       case "gain": newCategory = Category.GAIN; break;
@@ -22,9 +22,9 @@ class Transaction{
 
     return Transaction(
       category: newCategory,
-      date: (snapshot.data()! as Map<String, DateTime>)["date"]!,
-      value: (snapshot.data()! as Map<String, double>)["value"]!,
-      userId: (snapshot.data()! as Map<String, String>)["userId"]!
+      date:   ((snapshot.data()! as Map<String, Object?>)["date"]! as f.Timestamp).toDate(),
+      value: (snapshot.data()! as Map<String, Object?>)["value"]! as double,
+      userId: (snapshot.data()! as Map<String, Object?>)["userId"]! as String
     );
   }
   Map<String, dynamic> toJson(){
@@ -32,7 +32,7 @@ class Transaction{
       "userId": userId,
     "date" :  date,
     "value" : value,
-    "category" :  category.displayTitle,
+    "category" :  category.rawValue,
     };
   }
 }

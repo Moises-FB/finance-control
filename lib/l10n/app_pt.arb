@@ -26,5 +26,6 @@
   "dateErrorMessage": "Data inválida",
   "successMessage":  "Transação salva com sucesso!",
   "transactionsError": "Erro de servidor",
-  "emptyTransactionList": "Nada cadastrado por enquanto"
+  "emptyTransactionList": "Nada cadastrado por enquanto",
+  "totalTransactionsSum": "Saldo total"
 }

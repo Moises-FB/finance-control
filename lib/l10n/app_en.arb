@@ -26,6 +26,6 @@
   "dateErrorMessage": "Invalid Date",
   "successMessage":  "Transação salva com sucesso!",
   "transactionsError": "Internal server Error",
-  "emptyTransactionList": "Nothing registered yet"
-
+  "emptyTransactionList": "Nothing registered yet",
+  "totalTransactionsSum": "Balance"
 }

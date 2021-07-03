@@ -1,14 +1,20 @@
 import 'package:finance_control/models/category.dart';
+import 'package:finance_control/models/transaction.dart';
 import 'package:finance_control/utils/globals.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class BalanceRow extends StatelessWidget {
-  final Category category;
+  final Transaction transaction;
 
-  BalanceRow({ required this.category });
+  BalanceRow({ required this.transaction });
 
   @override
   Widget build(BuildContext context) {
+    var dateFormatter = new DateFormat('dd/MM/yyyy');
+    var date = dateFormatter.format(transaction.date);
+
+    var value = 'R\$ ${transaction.value.toStringAsFixed(2).replaceAll(".", ",")}';
     return SizedBox(
       height: 70,
       child: Padding(
@@ -28,16 +34,17 @@ class BalanceRow extends StatelessWidget {
 
                 SizedBox(width: 30),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Transporte"),
-                    Text("- R\$ 100,00", style: TextStyle(color: Colors.red),)
+                    Text(transaction.category.displayTitle),
+                    Text(value, style: TextStyle(color: transaction.value > 0 ? Colors.green : Colors.red),)
                   ],
                 ),
 
                 Spacer(),
 
-                Text("22/06/2021")
+                Text(date)
 
               ],
             ),
@@ -50,7 +57,7 @@ class BalanceRow extends StatelessWidget {
   }
 
   Image getCategoryImage() {
-    switch(category) {
+    switch(transaction.category) {
       case Category.BILLS:
         return Image.asset("assets/categories/bills_icon.png");
       case Category.FOOD:

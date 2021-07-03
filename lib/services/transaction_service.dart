@@ -26,9 +26,11 @@ class TransactionService{
     }
   }
 
-  Stream<firestore.QuerySnapshot>? getTransactions(){
+  Future<List<My.Transaction>?> getTransactions() async{
     String? userId = FirebaseAuth.instance.currentUser?.uid;
     if (userId == null) return null;
-    return _transactiosRef.where("userId", isEqualTo: userId).orderBy("date", descending: true).snapshots();
+    firestore.QuerySnapshot<Object?> response = await _transactiosRef.where("userId", isEqualTo: userId).orderBy("date", descending: true).get();
+    var transactions = response.docs.map((e) => e.data() as My.Transaction).toList();
+    return  transactions;
   }
 }
