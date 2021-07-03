@@ -17,7 +17,7 @@ class User extends Object {
       uid : snapshot.id,
       name : (snapshot.data()! as Map<String, Object?>)['name'] as String,
       email : (snapshot.data()! as Map<String, Object?>)['email'] as String,
-      imageUrl : (snapshot.data()! as Map<String, Object?>)['imageUrl'] as String
+      imageUrl : (snapshot.data()! as Map<String, Object?>)['imageUrl'] as String?
   );
 
  Map<String, Object?> toJson() {
